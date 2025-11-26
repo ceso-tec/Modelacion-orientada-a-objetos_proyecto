@@ -10,6 +10,33 @@ private:
     bool tieneCarga;
 
 public:
+// Constructor por omision
+    Camion() {
+        marca = "";
+        capacidadCarga = 0;
+        tieneCarga = false;
+    }
+
+// Getters
+    string get_marca() const {
+        return marca;
+    }
+    int get_capacidadCarga() const {
+        return capacidadCarga;
+    }
+    bool get_tieneCarga() const {
+        return tieneCarga;
+    }
+
+// Setters
+    void set_marca(string _marca) {
+        marca = _marca;
+    }
+    void set_capacidadCarga(int _capacidadCarga) {
+        capacidadCarga = _capacidadCarga;
+    }
+
+// Constructor por parametros
     Camion(string _marca, int _capacidadCarga) {
         marca = _marca;
         capacidadCarga = _capacidadCarga;
@@ -36,11 +63,4 @@ public:
         }
     }
 
-string getMarca() const {
-    return marca;
-}   
-
-int getCapacidadCarga() const {
-    return capacidadCarga;
-}
 };
