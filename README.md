@@ -1,5 +1,3 @@
-Avance 1: Seleccion de proyecto y creacion de objetos.
-
 Gestion Sencilla de una Flota de Vehiculos.
 
 El proyecto simula la gestion basica de una flota de vehiculos utilizando la Programación Orientada a Objetos en C++.
