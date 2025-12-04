@@ -1,66 +1,83 @@
+#pragma once
 #include <iostream>
 #include <string>
+#include "Automovil.h"
 
 using namespace std;
 
-class Camion {
+class Camion : public Automovil {
 private:
-    string marca;
     int capacidadCarga; // en toneladas
-    bool tieneCarga;
+    bool encendido;
 
 public:
 // Constructor por omision
-    Camion() {
-        marca = "";
+    Camion() : Automovil() {
         capacidadCarga = 0;
-        tieneCarga = false;
+        encendido = false;
+    }
+
+// Constructor por parametros
+    Camion(string _marca, string _modelo, int _anio, int _capacidadCarga) {
+        marca = _marca;
+        modelo = _modelo;
+        anio = _anio;
+        capacidadCarga = _capacidadCarga;
+        encendido = false;  
     }
 
 // Getters
-    string get_marca() const {
+    string get_marca() {
         return marca;
+    }
+    string get_modelo() {
+        return modelo;
+    }
+    int get_anio() {
+        return anio;
     }
     int get_capacidadCarga() const {
         return capacidadCarga;
     }
-    bool get_tieneCarga() const {
-        return tieneCarga;
+    bool is_encendido() {
+        return encendido;
     }
-
+    string get_estado() const{
+        return encendido ? "Encendido" : "Apagado";
+    }
+    
 // Setters
     void set_marca(string _marca) {
         marca = _marca;
+    }
+    void set_modelo(string _modelo) {
+        modelo = _modelo;
+    }
+    void set_anio(int _anio) {
+        anio = _anio;
     }
     void set_capacidadCarga(int _capacidadCarga) {
         capacidadCarga = _capacidadCarga;
     }
 
-// Constructor por parametros
-    Camion(string _marca, int _capacidadCarga) {
-        marca = _marca;
-        capacidadCarga = _capacidadCarga;
-        tieneCarga = false;  
-    }
-
-// Metodo para cargar el camion
-    void cargar() {
-        if (!tieneCarga) {
-            tieneCarga = true;
-            cout << "El camión ha sido cargado." << endl;
+// Metodo para encender el camion
+    void encender() override {
+        if (!encendido) {
+            encendido = true;
+            cout << "El camion ha sido encendido." << endl;
         } else {
-            cout << "El camión ya estaba cargado." << endl;
+            cout << "El camion ya estaba encendido." << endl;
         }
     }
 
-// Metodo para descargar el camion
-    void descargar() {
-        if (tieneCarga) {
-            tieneCarga = false;
-            cout << "El camión ha sido descargado." << endl;
+// Metodo para apagar el camion
+    void apagar() override {
+        if (encendido) {
+            encendido = false;
+            cout << "El camion ha sido apagado." << endl;
         } else {
-            cout << "El camión ya estaba descargado." << endl;
+            cout << "El camion ya estaba apagado." << endl;
         }
-    }
-
+    } 
+    
 };

@@ -1,37 +1,33 @@
 #include <iostream>
+
+#include "Estacionamiento.h"
 #include "Coche.h"
 #include "Camion.h"
 #include "Motocicleta.h"
 
 using namespace std;
 int main() {
-    // Crear instancia de Coche
-    Coche miCoche("Toyota", "Corolla", 2020);
-    cout << "Coche: " << miCoche.get_modelo() << ", Año: " << miCoche.get_anio() << ", Estado: " << miCoche.get_estado() << endl;
-    cout << "Marca: " << miCoche.get_marca() << endl;
-    miCoche.encender();
-    cout << "Estado después de encender: " << miCoche.get_estado() << endl;
-    miCoche.apagar();
-    cout << "Estado después de apagar: " << miCoche.get_estado() << endl;
+// Crear instancia de Coche
+    Coche* miCoche = new Coche("Toyota", "Corolla", 2020);
 
-    cout << "------------------------" << endl;
+// Crear instancia de Camion
+    Camion* miCamion = new Camion("Volvo", "Volvo FH", 2020, 15);
 
-    // Crear instancia de Camion
-    Camion miCamion("Volvo", 15);
-    cout << "Camión: " << miCamion.get_capacidadCarga() << " toneladas" << endl;
-    cout << "Marca: " << miCamion.get_marca() << endl;
-    miCamion.cargar();
-    miCamion.descargar();
+// Crear instancia de Motocicleta
+    Motocicleta* miMoto = new Motocicleta("Honda","Forza 750", 2025, 745);
 
-    cout << "------------------------" << endl;
+// Crear instancia de Estacionamiento 
+    Estacionamiento miEstacionamiento("Estacionamiento Central");
 
-    // Crear instancia de Motocicleta
-    Motocicleta miMoto("Honda", 600);
-    cout << "Motocicleta: " << miMoto.get_cilindrada() << " cc" << endl;
-    cout << "Marca: " << miMoto.get_marca() << endl;
-    miMoto.ponerCasco();
-    miMoto.quitarCasco();
+// Agregagacion de automoviles al estacionamiento
+    miEstacionamiento.agregarAutomovil(miCoche);
+    miEstacionamiento.agregarAutomovil(miCamion);
+    miEstacionamiento.agregarAutomovil(miMoto);
+
+// Mostrar los automoviles en el estacionamiento
+    miEstacionamiento.mostrarAutomoviles();
+    miEstacionamiento.encenderTodos();
+    miEstacionamiento.apagarTodos();
 
     return 0;
-
 };

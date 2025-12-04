@@ -1,66 +1,83 @@
+#pragma once
 #include <iostream>
 #include <string>
+#include "Automovil.h"
 
 using namespace std;
 
-class Motocicleta {
+class Motocicleta: public Automovil {
 private:
-    string marca;
     int cilindrada;
-    bool cascoPuesto;
+    bool encendido;
 
 public:
 // Constructor por omision
     Motocicleta() {
-        marca = "";
         cilindrada = 0;
-        cascoPuesto = false;
+        encendido = false;
     }
     
 // Constructor por parametros
-    Motocicleta(string _marca, int _cilindrada) {
+    Motocicleta(string _marca, string _modelo, int _anio, int _cilindrada) {
         marca = _marca;
+        modelo = _modelo;
+        anio = _anio;    
         cilindrada = _cilindrada;
-        cascoPuesto = false;  
+        encendido = false;  
     }
 
 // Getters
+    string get_marca() {
+        return marca;
+    }
+    string get_modelo() {
+        return modelo;
+    }
+    int get_anio() {
+        return anio;
+    }
     int get_cilindrada() const {
         return cilindrada;
     }
-    string get_marca() const {
-        return marca;
+    bool is_encendido() const {
+        return encendido;
     }
-    bool get_cascoPuesto() const {
-        return cascoPuesto;
+    string get_estado() const{
+        return encendido ? "Encendido" : "Apagado";
     }
 
 // Setters 
-    void set_cilindrada(int _cilindrada) {
-        cilindrada = _cilindrada;
-    }
     void set_marca(string _marca) {
         marca = _marca;
     }
+    void set_modelo(string _modelo) {
+        modelo = _modelo;
+    }
+    void set_anio(int _anio) {
+        anio = _anio;
+    }
+    void set_cilindrada(int _cilindrada) {
+        cilindrada = _cilindrada;
+    }
 
-// Metodo para poner el casco
-    void ponerCasco() {
-        if (!cascoPuesto) {
-            cascoPuesto = true;
-            cout << "El casco ha sido puesto." << endl;
+// Metodo para encender la motocicleta
+    void encender() override {
+        if (!encendido) {
+            encendido = true;
+            cout << "La motocicleta ha sido encendido." << endl;
         } else {
-            cout << "El casco ya estaba puesto." << endl;
+            cout << "La motocicleta ya estaba encendido." << endl;
         }
     }
 
-// Metodo para quitar el casco
-    void quitarCasco() {
-        if (cascoPuesto) {
-            cascoPuesto = false;
-            cout << "El casco ha sido quitado." << endl;
+// Metodo para apagar la motocicleta
+    void apagar() override {
+        if (encendido) {
+            encendido = false;
+            cout << "La motocicleta ha sido apagado." << endl;
         } else {
-            cout << "El casco ya habia sido quitado." << endl;
+            cout << "La motocicleta ya estaba apagado." << endl;
         }
-    }
+    } 
 
 };

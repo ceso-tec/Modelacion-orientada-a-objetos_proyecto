@@ -1,20 +1,18 @@
+#pragma once
 #include <iostream>
 #include <string>
+#include "Automovil.h"
+
 using namespace std;
 
-class Coche {
+// Implementacion de herencia
+class Coche :public Automovil {
 private:
-    string marca;
-    string modelo;
-    int anio;
     bool encendido;
 
 public:
 // Constructor por omision
-    Coche() {
-        marca = "";
-        modelo = "";
-        anio = 0;
+    Coche() : Automovil() {
         encendido = false;
     }
 
@@ -27,17 +25,20 @@ public:
     }
 
 // Getters
-    string get_marca() const {
+    string get_marca() {
         return marca;
     }
-    string get_modelo() const {
+    string get_modelo() {
         return modelo;
     }
-    int get_anio() const {
+    int get_anio() {
         return anio;
     }
-    bool is_encendido() const {
+    bool is_encendido() {
         return encendido;
+    }
+    string get_estado() const{
+        return encendido ? "Encendido" : "Apagado";
     }
 
 // Setters 
@@ -50,9 +51,9 @@ public:
     void set_anio(int _anio) {
         anio = _anio;
     }
-
+  
 // Metodo para encender el coche
-    void encender() {
+    void encender() override {
         if (!encendido) {
             encendido = true;
             cout << "El coche ha sido encendido." << endl;
@@ -62,7 +63,7 @@ public:
     }
 
 // Metodo para apagar el coche
-    void apagar() {
+    void apagar() override {
         if (encendido) {
             encendido = false;
             cout << "El coche ha sido apagado." << endl;
@@ -70,9 +71,5 @@ public:
             cout << "El coche ya estaba apagado." << endl;
         }
     } 
-
-string get_estado() const{
-    return encendido ? "Encendido" : "Apagado";
-}
 
 };
