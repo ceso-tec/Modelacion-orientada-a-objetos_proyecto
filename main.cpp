@@ -8,10 +8,10 @@
 using namespace std;
 int main() {
 // Crear instancia de Coche
-    Coche* miCoche = new Coche("Toyota", "Corolla", 2020);
+    Coche* miCoche = new Coche("Toyota", "Corolla", 2020, "Rojo");
 
 // Crear instancia de Camion
-    Camion* miCamion = new Camion("Volvo", "Volvo FH", 2020, 15);
+    Camion* miCamion = new Camion("Volvo", "FH16", 2020, 15);
 
 // Crear instancia de Motocicleta
     Motocicleta* miMoto = new Motocicleta("Honda","Forza 750", 2025, 745);
@@ -26,8 +26,5 @@ int main() {
 
 // Mostrar los automoviles en el estacionamiento
     miEstacionamiento.mostrarAutomoviles();
-    miEstacionamiento.encenderTodos();
-    miEstacionamiento.apagarTodos();
-
     return 0;
 };

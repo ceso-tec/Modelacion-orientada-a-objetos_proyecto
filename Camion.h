@@ -8,13 +8,11 @@ using namespace std;
 class Camion : public Automovil {
 private:
     int capacidadCarga; // en toneladas
-    bool encendido;
 
 public:
 // Constructor por omision
     Camion() : Automovil() {
         capacidadCarga = 0;
-        encendido = false;
     }
 
 // Constructor por parametros
@@ -22,8 +20,7 @@ public:
         marca = _marca;
         modelo = _modelo;
         anio = _anio;
-        capacidadCarga = _capacidadCarga;
-        encendido = false;  
+        capacidadCarga = _capacidadCarga; 
     }
 
 // Getters
@@ -38,12 +35,6 @@ public:
     }
     int get_capacidadCarga() const {
         return capacidadCarga;
-    }
-    bool is_encendido() {
-        return encendido;
-    }
-    string get_estado() const{
-        return encendido ? "Encendido" : "Apagado";
     }
     
 // Setters
@@ -60,24 +51,15 @@ public:
         capacidadCarga = _capacidadCarga;
     }
 
-// Metodo para encender el camion
-    void encender() override {
-        if (!encendido) {
-            encendido = true;
-            cout << "El camion ha sido encendido." << endl;
-        } else {
-            cout << "El camion ya estaba encendido." << endl;
-        }
+// Metodo para calcular la tarifa del camion
+    void calcularTarifa() override {
+        double tarifa = 140.0; // Tarifa base para camiones
+        cout << "La tarifa del camion es: $" << tarifa << endl;
     }
 
-// Metodo para apagar el camion
-    void apagar() override {
-        if (encendido) {
-            encendido = false;
-            cout << "El camion ha sido apagado." << endl;
-        } else {
-            cout << "El camion ya estaba apagado." << endl;
-        }
-    } 
-    
+// Metodo para mostrar informacion de la motocicleta
+    void mostrarInfo() override {
+        cout << "Capacidad de carga: " << capacidadCarga << " Toneladas" << endl;    
+    }
+
 };

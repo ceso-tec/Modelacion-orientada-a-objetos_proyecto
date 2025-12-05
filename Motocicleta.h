@@ -8,13 +8,11 @@ using namespace std;
 class Motocicleta: public Automovil {
 private:
     int cilindrada;
-    bool encendido;
 
 public:
 // Constructor por omision
     Motocicleta() {
         cilindrada = 0;
-        encendido = false;
     }
     
 // Constructor por parametros
@@ -23,7 +21,6 @@ public:
         modelo = _modelo;
         anio = _anio;    
         cilindrada = _cilindrada;
-        encendido = false;  
     }
 
 // Getters
@@ -38,12 +35,6 @@ public:
     }
     int get_cilindrada() const {
         return cilindrada;
-    }
-    bool is_encendido() const {
-        return encendido;
-    }
-    string get_estado() const{
-        return encendido ? "Encendido" : "Apagado";
     }
 
 // Setters 
@@ -60,24 +51,15 @@ public:
         cilindrada = _cilindrada;
     }
 
-// Metodo para encender la motocicleta
-    void encender() override {
-        if (!encendido) {
-            encendido = true;
-            cout << "La motocicleta ha sido encendido." << endl;
-        } else {
-            cout << "La motocicleta ya estaba encendido." << endl;
-        }
+// Metodo para calcular la tarifa del motocicleta
+    void calcularTarifa() override {
+        double tarifa = 25.0; // Tarifa base para motocicletas
+        cout << "La tarifa de la motocicleta es: $" << tarifa << endl;
     }
 
-// Metodo para apagar la motocicleta
-    void apagar() override {
-        if (encendido) {
-            encendido = false;
-            cout << "La motocicleta ha sido apagado." << endl;
-        } else {
-            cout << "La motocicleta ya estaba apagado." << endl;
-        }
-    } 
+// Metodo para mostrar informacion de la motocicleta
+    void mostrarInfo() override {
+        cout << "Cilindrada: " << cilindrada << "cc" << endl;    
+    }
 
 };

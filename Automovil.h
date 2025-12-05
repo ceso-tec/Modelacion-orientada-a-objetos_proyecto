@@ -47,7 +47,7 @@ class Automovil {
     }
 
 // Metodos abstracto implementados en las clases hijas
-    virtual void encender() = 0;
-    virtual void apagar() = 0;
-    
+    virtual void calcularTarifa() = 0;
+    virtual void mostrarInfo() = 0;
+
 };

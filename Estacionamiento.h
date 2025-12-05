@@ -10,17 +10,17 @@ using namespace std;
 class Estacionamiento {
 private:
     list<Automovil*> listaAutomoviles;
-    string propietario;
+    string nombreEstacionamiento;
     
 public:
 // Constructor por omision
     Estacionamiento() {
-        propietario = "";
+        nombreEstacionamiento = "";
     }
 
 // Constructor por parametros
-    Estacionamiento(string _propietario) {
-        propietario = _propietario;
+    Estacionamiento(string _nombreEstacionamiento) {
+        nombreEstacionamiento = _nombreEstacionamiento;
     }
 
     ~Estacionamiento() {
@@ -31,12 +31,12 @@ public:
     list<Automovil*> get_listaAutomoviles() {
         return listaAutomoviles;
     }
-    string get_propietario() {
-        return propietario;
+    string get_nombreEstacionamientoo() {
+        return nombreEstacionamiento;
     }
 // Setters
-    void set_propietario(string _propietario) {
-        propietario = _propietario;
+    void set_nombreEstacionamiento(string _nombreEstacionamiento) {
+        nombreEstacionamiento = _nombreEstacionamiento;
     }
 
 // Metodo para agregar un automovil al estacionamiento
@@ -46,22 +46,16 @@ public:
 
 // Metodo para mostrar los automoviles en el estacionamiento
     void mostrarAutomoviles() {
-        cout << "Nombre del estacionamiento: " << propietario << endl;
-        cout << "Lista de Automoviles en el Estacionamiento:" << endl;
+        cout << "Nombre del estacionamiento: " << nombreEstacionamiento << endl;
+        cout << "Cantidad de automoviles en el estacionamiento: " << listaAutomoviles.size() << endl;
+        cout << "Lista de automoviles en el estacionamiento y sus caracteristicas especificas:" << endl;
         for (Automovil* autoPtr : listaAutomoviles) {
-            cout << "- " << autoPtr->get_marca() << " " << autoPtr->get_modelo() << " (" << autoPtr->get_anio() << ")" << endl;
+            cout << "- " << autoPtr->get_marca() << " " << autoPtr->get_modelo() << " " << autoPtr->get_anio() << endl;
+        autoPtr->mostrarInfo();
+        }
+        for (Automovil* autoPtr : listaAutomoviles) {
+            autoPtr->calcularTarifa();
         }
     }
-    
-    void encenderTodos() {
-        for (Automovil* autoPtr : listaAutomoviles) {
-            autoPtr->encender();
-        }
-    }
-    void apagarTodos() {
-        for (Automovil* autoPtr : listaAutomoviles) {
-            autoPtr->apagar();
-        }
-    }
-    
+
 };

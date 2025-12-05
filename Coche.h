@@ -8,20 +8,20 @@ using namespace std;
 // Implementacion de herencia
 class Coche :public Automovil {
 private:
-    bool encendido;
+    string color;
 
 public:
 // Constructor por omision
     Coche() : Automovil() {
-        encendido = false;
+        color = "";
     }
 
 // Constructor por parametros
-    Coche(string _marca, string _modelo, int _anio) {
+    Coche(string _marca, string _modelo, int _anio, string _color) {
         marca = _marca;
         modelo = _modelo;
         anio = _anio;
-        encendido = false;  
+        color = _color;
     }
 
 // Getters
@@ -34,11 +34,8 @@ public:
     int get_anio() {
         return anio;
     }
-    bool is_encendido() {
-        return encendido;
-    }
-    string get_estado() const{
-        return encendido ? "Encendido" : "Apagado";
+    string get_color() const {
+        return color;
     }
 
 // Setters 
@@ -51,25 +48,19 @@ public:
     void set_anio(int _anio) {
         anio = _anio;
     }
+    void set_color(string _color) {
+        color = _color;
+    }
   
-// Metodo para encender el coche
-    void encender() override {
-        if (!encendido) {
-            encendido = true;
-            cout << "El coche ha sido encendido." << endl;
-        } else {
-            cout << "El coche ya estaba encendido." << endl;
-        }
+// Metodo para calcular la tarifa del coche
+    void calcularTarifa() override {
+        double tarifa = 50.0; // Tarifa base para coches
+        cout << "La tarifa del coche es: $" << tarifa << endl;
     }
 
-// Metodo para apagar el coche
-    void apagar() override {
-        if (encendido) {
-            encendido = false;
-            cout << "El coche ha sido apagado." << endl;
-        } else {
-            cout << "El coche ya estaba apagado." << endl;
-        }
-    } 
+// Metodo para mostrar informacion del coche
+    void mostrarInfo() override {
+        cout << "Color: " << color << endl;    
+    }
 
 };
