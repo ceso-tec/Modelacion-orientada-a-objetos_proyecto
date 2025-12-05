@@ -53,9 +53,12 @@ public:
             cout << "- " << autoPtr->get_marca() << " " << autoPtr->get_modelo() << " " << autoPtr->get_anio() << endl;
         autoPtr->mostrarInfo();
         }
+    }
+// Metodo para calcular las tarifas totales de los automoviles en el estacionamiento
+    void calcularTarifasTotales() {
+        cout << "Generando reporte de tarifas por tipo de automovil " << endl;
         for (Automovil* autoPtr : listaAutomoviles) {
             autoPtr->calcularTarifa();
-        }
     }
-
+    }
 };

@@ -26,5 +26,6 @@ int main() {
 
 // Mostrar los automoviles en el estacionamiento
     miEstacionamiento.mostrarAutomoviles();
+    miEstacionamiento.calcularTarifasTotales();
     return 0;
 };
