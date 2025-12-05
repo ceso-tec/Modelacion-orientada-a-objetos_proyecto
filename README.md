@@ -18,9 +18,11 @@ Acciones principales del programa.
 
 Consideraciones:
 Compilar todos los archivos juntos usando un compilador de C++
+
   Windows "g++ main.cpp -o main.exe"
   macOS "g++ main.cpp -o main.o"
   
 Ejecutar el programa resultante:
+
   Windows "./main.exe"
   macOS "./main.o"
