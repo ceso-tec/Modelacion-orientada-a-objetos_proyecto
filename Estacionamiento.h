@@ -23,10 +23,6 @@ public:
         nombreEstacionamiento = _nombreEstacionamiento;
     }
 
-    ~Estacionamiento() {
-        listaAutomoviles.clear();
-    }
-
 // Getters
     list<Automovil*> get_listaAutomoviles() {
         return listaAutomoviles;

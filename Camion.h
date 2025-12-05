@@ -24,29 +24,11 @@ public:
     }
 
 // Getters
-    string get_marca() {
-        return marca;
-    }
-    string get_modelo() {
-        return modelo;
-    }
-    int get_anio() {
-        return anio;
-    }
     int get_capacidadCarga() const {
         return capacidadCarga;
     }
     
 // Setters
-    void set_marca(string _marca) {
-        marca = _marca;
-    }
-    void set_modelo(string _modelo) {
-        modelo = _modelo;
-    }
-    void set_anio(int _anio) {
-        anio = _anio;
-    }
     void set_capacidadCarga(int _capacidadCarga) {
         capacidadCarga = _capacidadCarga;
     }
