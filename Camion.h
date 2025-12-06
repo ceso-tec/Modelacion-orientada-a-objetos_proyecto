@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Implementacion de herencia
 class Camion : public Automovil {
 private:
     int capacidadCarga; // en toneladas

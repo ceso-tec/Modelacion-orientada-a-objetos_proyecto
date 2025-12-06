@@ -5,6 +5,7 @@
 
 using namespace std;
 
+// Implementacion de herencia
 class Motocicleta: public Automovil {
 private:
     int cilindrada;

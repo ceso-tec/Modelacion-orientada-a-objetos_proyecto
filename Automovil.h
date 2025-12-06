@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;   
-
+// Clase base abstracta
 class Automovil {
     protected:
         string marca;

@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// Clase Estacionamiento que contiene una lista de punteros a Automovil
 class Estacionamiento {
 private:
     list<Automovil*> listaAutomoviles;
@@ -30,6 +31,7 @@ public:
     string get_nombreEstacionamientoo() {
         return nombreEstacionamiento;
     }
+
 // Setters
     void set_nombreEstacionamiento(string _nombreEstacionamiento) {
         nombreEstacionamiento = _nombreEstacionamiento;
@@ -50,11 +52,13 @@ public:
         autoPtr->mostrarInfo();
         }
     }
+
 // Metodo para calcular las tarifas totales de los automoviles en el estacionamiento
     void calcularTarifasTotales() {
         cout << "Generando reporte de tarifas por tipo de automovil " << endl;
         for (Automovil* autoPtr : listaAutomoviles) {
             autoPtr->calcularTarifa();
+        }
     }
-    }
+
 };
