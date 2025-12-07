@@ -40,8 +40,8 @@ public:
     }
 
 // Agrega un nuevo automovil al estacionamiento, recibe AutoNuevo como parametro y no retorna valor.
-    void agregarAutomovil(Automovil* AutoNuevo){
-        listaAutomoviles.push_back(AutoNuevo);
+    void agregarAutomovil(Automovil* autoNuevo){
+        listaAutomoviles.push_back(autoNuevo);
     }
 
 // Muestra la informacion general y especifica de los automoviles en el estacionamiento, asi como la cantidad total de vehiculos en el mismo.

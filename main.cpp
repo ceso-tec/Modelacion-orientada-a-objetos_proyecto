@@ -14,7 +14,7 @@ int main() {
     Coche* miCoche = new Coche("Toyota", "Corolla", 2020, "Rojo");
 
 // Crear instancia de Camion
-    Camion* miCamion = new Camion("Volvo", "FH16", 2020, 15);
+    Camion* miCamion = new Camion("Volvo", "FH16", 2023, 15);
 
 // Crear instancia de Motocicleta
     Motocicleta* miMoto = new Motocicleta("Honda","Forza 750", 2025, 745);
