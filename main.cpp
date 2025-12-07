@@ -1,9 +1,12 @@
 #include <iostream>
-
 #include "Estacionamiento.h"
 #include "Coche.h"
 #include "Camion.h"
 #include "Motocicleta.h"
+
+// Funcion principal del programa.
+// Crea diferentes tipos de Automoviles y los gestiona a traves de la clase Estacionamiento.
+// No recibe parametros y retorna 0 si el programa termina exitosamente.
 
 using namespace std;
 int main() {
@@ -26,6 +29,10 @@ int main() {
 
 // Mostrar los automoviles en el estacionamiento
     miEstacionamiento.mostrarAutomoviles();
+
+// Calcular las tarifas totales.
     miEstacionamiento.calcularTarifasTotales();
+
     return 0;
+
 };

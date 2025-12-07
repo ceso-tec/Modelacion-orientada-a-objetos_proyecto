@@ -7,53 +7,57 @@
 
 using namespace std;
 
-// Clase Estacionamiento que contiene una lista de punteros a Automovil
+// Representa la clase Estacionamiento que gestiona una coleccion de Automoviles.
+
 class Estacionamiento {
 private:
     list<Automovil*> listaAutomoviles;
     string nombreEstacionamiento;
     
 public:
-// Constructor por omision
+// Constructor por omision que inicializa el nombre del estacionamiento a una cadena vacia.
     Estacionamiento() {
         nombreEstacionamiento = "";
     }
 
-// Constructor por parametros
+// Constructor por parametros que inicializa el nombre del estacionamiento, no retorna valor.
     Estacionamiento(string _nombreEstacionamiento) {
         nombreEstacionamiento = _nombreEstacionamiento;
     }
 
-// Getters
-    list<Automovil*> get_listaAutomoviles() {
+// Retorna la lista de automoviles en el estacionamiento, no recibe parametros.
+    list<Automovil*> getListaAutomoviles() {
         return listaAutomoviles;
     }
-    string get_nombreEstacionamientoo() {
+// Retorna el nombre del estacionamiento, no recibe parametros.
+    string getNombreEstacionamientoo() {
         return nombreEstacionamiento;
     }
 
-// Setters
-    void set_nombreEstacionamiento(string _nombreEstacionamiento) {
+// Establece el nombre del estacionamiento, recibe un parametro y no retorna valor.
+    void setNombreEstacionamiento(string _nombreEstacionamiento) {
         nombreEstacionamiento = _nombreEstacionamiento;
     }
 
-// Metodo para agregar un automovil al estacionamiento
+// Agrega un nuevo automovil al estacionamiento, recibe AutoNuevo como parametro y no retorna valor.
     void agregarAutomovil(Automovil* AutoNuevo){
         listaAutomoviles.push_back(AutoNuevo);
     }
 
-// Metodo para mostrar los automoviles en el estacionamiento
+// Muestra la informacion general y especifica de los automoviles en el estacionamiento, asi como la cantidad total de vehiculos en el mismo.
+// No recibe parametros y no retorna valor.
     void mostrarAutomoviles() {
         cout << "Nombre del estacionamiento: " << nombreEstacionamiento << endl;
         cout << "Cantidad de automoviles en el estacionamiento: " << listaAutomoviles.size() << endl;
         cout << "Lista de automoviles en el estacionamiento y sus caracteristicas especificas:" << endl;
         for (Automovil* autoPtr : listaAutomoviles) {
-            cout << "- " << autoPtr->get_marca() << " " << autoPtr->get_modelo() << " " << autoPtr->get_anio() << endl;
+            cout << "- " << autoPtr->getMarca() << " " << autoPtr->getModelo() << " " << autoPtr->getAnio() << endl;
         autoPtr->mostrarInfo();
         }
     }
 
-// Metodo para calcular las tarifas totales de los automoviles en el estacionamiento
+// Calcula e imprime las tarifas totales de todos los automoviles en el estacionamiento.
+// No recibe parametros y no retorna valor.
     void calcularTarifasTotales() {
         cout << "Generando reporte de tarifas por tipo de automovil " << endl;
         for (Automovil* autoPtr : listaAutomoviles) {

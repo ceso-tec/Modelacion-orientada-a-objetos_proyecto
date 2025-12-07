@@ -5,18 +5,20 @@
 
 using namespace std;
 
-// Implementacion de herencia
+// Representa la clase Motocicleta que hereda caracteristicas generales de Automovil.
+
 class Motocicleta: public Automovil {
 private:
+// Atributo especifico de la clase Motocicleta
     int cilindrada;
 
 public:
-// Constructor por omision
+// Constructor por omision que inicializa la cilindrada a 0, no recibe parametros y no retorna valor.
     Motocicleta() {
-        cilindrada = 0;
+        cilindrada = 0.0;
     }
     
-// Constructor por parametros
+// Constructor por parametros, inicializa los atributos marca, modelo, anio y cilindrada, no retorna valor.
     Motocicleta(string _marca, string _modelo, int _anio, int _cilindrada) {
         marca = _marca;
         modelo = _modelo;
@@ -24,23 +26,23 @@ public:
         cilindrada = _cilindrada;
     }
 
-// Getters
-    int get_cilindrada() const {
+// Retorna la cilindrada de la motocicleta, no recibe parametros. 
+    int getCilindrada() const {
         return cilindrada;
     }
 
-// Setters 
-    void set_cilindrada(int _cilindrada) {
+// Establece la cilindrada de la motocicleta, recibe un parametro y no retorna valor.
+    void setCilindrada(int _cilindrada) {
         cilindrada = _cilindrada;
     }
 
-// Metodo para calcular la tarifa del motocicleta
+// Calcula e imprime la tarifa base para una motocicleta, no recibe parametros y no retorna valor.
     void calcularTarifa() override {
-        double tarifa = 25.0; // Tarifa base para motocicletas
+        double tarifa = 25.0;
         cout << "La tarifa de la motocicleta es: $" << tarifa << endl;
     }
 
-// Metodo para mostrar informacion de la motocicleta
+// Muestra la informacion especifica de la motocicleta, no recibe parametros y no retorna valor.
     void mostrarInfo() override {
         cout << "Cilindrada: " << cilindrada << "cc" << endl;    
     }
