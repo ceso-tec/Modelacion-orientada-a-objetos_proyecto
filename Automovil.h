@@ -5,6 +5,8 @@ using namespace std;
 
 // Clase abstracta Automovil que representa las caracteristicas fundamentales de un vehiculo.
 // Contiene informacion de marca, modelo y anio.
+// Cesar Ricardo Rosales Ramirez A01715405
+// Fecha de creacion 15 de Noviembre
 
 class Automovil {
     protected:

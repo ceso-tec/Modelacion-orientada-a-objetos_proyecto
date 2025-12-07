@@ -6,6 +6,8 @@
 using namespace std;
 
 // Representa la clase Motocicleta que hereda caracteristicas generales de Automovil.
+// Cesar Ricardo Rosales Ramirez A01715405
+// Fecha de creacion 15 de Noviembre
 
 class Motocicleta: public Automovil {
 private:

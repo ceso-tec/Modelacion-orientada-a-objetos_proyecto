@@ -7,6 +7,8 @@
 // Funcion principal del programa.
 // Crea diferentes tipos de Automoviles y los gestiona a traves de la clase Estacionamiento.
 // No recibe parametros y retorna 0 si el programa termina exitosamente.
+// Cesar Ricardo Rosales Ramirez A01715405
+// Fecha de creacion 15 de Noviembre
 
 using namespace std;
 int main() {

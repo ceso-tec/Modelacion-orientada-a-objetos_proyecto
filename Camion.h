@@ -6,6 +6,8 @@
 using namespace std;
 
 // Representa la clase Camion que hereda caracteristicas generales de Automovil.
+// Cesar Ricardo Rosales Ramirez A01715405
+// Fecha de creacion 15 de Noviembre
 
 class Camion : public Automovil {
 private:

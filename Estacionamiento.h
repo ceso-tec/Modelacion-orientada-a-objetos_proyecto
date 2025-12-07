@@ -8,6 +8,8 @@
 using namespace std;
 
 // Representa la clase Estacionamiento que gestiona una coleccion de Automoviles.
+// Cesar Ricardo Rosales Ramirez A01715405
+// Fecha de creacion 15 de Noviembre
 
 class Estacionamiento {
 private:
